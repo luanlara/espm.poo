@@ -27,6 +27,12 @@ public class Banco {
         return clientes;
     }
 
+    public List<Conta> getContas() {
+        return contas;
+    }
 
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
+    }
 
 }

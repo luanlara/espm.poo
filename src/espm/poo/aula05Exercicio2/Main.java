@@ -14,21 +14,29 @@ public class Main {
         boolean exit = false;
 
         while (!exit) {
-            System.out.print("ESPM> ");
-            String input = scan.nextLine().trim().toLowerCase();
+            try {
 
-            if ("".equals(input)){
+            
+                System.out.print("ESPM> ");
+                String input = scan.nextLine().trim().toLowerCase();
 
-            } else if("exit".equals(input)) {
-                exit = true;
-            } else if("help".equals(input)) {
-                help();
-            } else if("list".equals(input)) {
-                listCustomers(banco);
-            } else if("add".equals(input)){
-                addCustomer(banco);
-            } else {
-                System.err.println("Comando inválido.");
+                if ("".equals(input)){
+
+                } else if("exit".equals(input)) {
+                    exit = true;
+                } else if("help".equals(input)) {
+                    help();
+                } else if("list".equals(input)) {
+                    listCustomers(banco);
+                } else if("add".equals(input)){
+                    addCustomer(banco);
+                }else if("find".equals(input)) {
+                    throw new UnsupportedOperationException();
+                } else {
+                    System.err.println("Comando inválido.");
+                }
+            } catch (UnsupportedOperationException e) {
+                e.printStackTrace();
             }
         }
         System.out.println("Bye bye");
