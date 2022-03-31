@@ -7,6 +7,8 @@ public class Pessoa {
     double salario;
 
 
+
+
     public void imprimir() {
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);

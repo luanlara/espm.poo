@@ -23,6 +23,11 @@ public class Main {
         p2.imprimir();
         p3.imprimir();
 
+        String nome = "Luan";
+        if (nome.equals("Luan")) {     //comparação entre
+            System.out.println("Levantar da cama");
+        }
+
     }
 
 }
