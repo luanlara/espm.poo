@@ -1,9 +1,14 @@
-package src.espm.poo.aula05Exercicio2;
+package espm.poo.aula05Exercicio2;
 
 public class Cliente {
     
     private String nome;
     private String cpf;
+    private Conta conta;
+
+    public Cliente() {
+        this.conta = new Conta(this);
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -19,6 +24,10 @@ public class Cliente {
 
     public String getCpf() {
         return cpf;
+    }
+
+    public Conta getConta() {
+        return conta;
     }
 
     @Override

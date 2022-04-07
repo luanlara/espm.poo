@@ -1,4 +1,4 @@
-package src.espm.poo.aula05Exercicio2;
+package espm.poo.aula05Exercicio2;
 
 import java.util.Scanner;
 
@@ -15,7 +15,6 @@ public class Main {
 
         while (!exit) {
             try {
-
             
                 System.out.print("ESPM> ");
                 String input = scan.nextLine().trim().toLowerCase();
@@ -68,6 +67,8 @@ public class Main {
         Cliente c = new Cliente();
         c.setNome(nome);
         c.setCpf(cpf);
+
+        
 
         banco.addCliente(c);
     }

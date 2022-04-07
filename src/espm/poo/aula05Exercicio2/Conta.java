@@ -1,4 +1,4 @@
-package src.espm.poo.aula05Exercicio2;
+package espm.poo.aula05Exercicio2;
 
 import java.util.List;
 

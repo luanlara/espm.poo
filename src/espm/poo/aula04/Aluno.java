@@ -1,4 +1,4 @@
-package src.espm.poo.aula04;
+package espm.poo.aula04;
 
 public class Aluno {
     

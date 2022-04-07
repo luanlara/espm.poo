@@ -1,7 +1,7 @@
-package src.espm.poo.aula03;
+package espm.poo.aula03;
 
 
-import src.espm.poo.aula02.Pessoa;
+import espm.poo.aula02.Pessoa;
 
 public class Main {
     public static void main(String[] args) {

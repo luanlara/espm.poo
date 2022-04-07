@@ -1,4 +1,4 @@
-package src.espm.poo.aula05Exercicio2;
+package espm.poo.aula05Exercicio2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +17,7 @@ public class Banco {
 
     public void addCliente(Cliente c) {
         this.clientes.add(c);
+        this.contas.add(c.getConta());
     }
 
     public String getNome(){
