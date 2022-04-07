@@ -66,8 +66,9 @@ public class Main {
 
         Cliente c = new Cliente();
         c.setNome(nome);
-        c.setCpf(cpf);
-
+        
+        PessoaFisica pf = new PessoaFisica();
+        pf.setCpf(cpf);
         
 
         banco.addCliente(c);
