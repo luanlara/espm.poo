@@ -2,7 +2,7 @@ package espm.poo.aula05Exercicio2;
 
 import java.util.Scanner;
 
-public class Main {
+public final class Main {
 
     public static Banco banco = null;
     
@@ -54,7 +54,15 @@ public class Main {
     }
 
     private static void listCustomers(Banco banco){
-        banco.getClientes().forEach(c -> System.out.println(c));
+        banco.getClientes().forEach(c -> {
+            if(c instanceof PessoaFisica) {
+                PessoaFisica pf = (PessoaFisica) (c);
+                System.out.println(pf);
+            } else if(c instanceof PessoaJuridica) {
+                PessoaJuridica pj = (PessoaJuridica) (c);
+                System.out.println(pj);
+            }
+        });
     }
 
     private static void addCustomer(Banco banco) {
@@ -75,7 +83,7 @@ public class Main {
                 c = pf;
                 break;
             case Juridica:
-                System.out.println("CNJP: ");
+                System.out.print("CNJP: ");
                 String cnpj = scan.nextLine();
 
                 PessoaJuridica pj = new PessoaJuridica();
@@ -84,6 +92,7 @@ public class Main {
                 break;
         }
         c.setNome(nome);
+
         banco.addCliente(c);
     }
 
