@@ -62,45 +62,42 @@ public class Main {
         System.out.print("Nome: ");
         String nome = scan.nextLine();
 
-        String tipoPessoa = inputTipoCliente();
+        TipoPessoa tipoPessoa = inputTipoCliente();
 
         Cliente c = null;
-        if("f".equals(tipoPessoa)) {
+        switch(tipoPessoa) {
+            case Fisica:
+                System.out.print("CPF: ");
+                String cpf = scan.nextLine();
 
-            System.out.print("CPF: ");
-            String cpf = scan.nextLine();
+                PessoaFisica pf = new PessoaFisica();
+                pf.setCpf(cpf);
+                c = pf;
+                break;
+            case Juridica:
+                System.out.println("CNJP: ");
+                String cnpj = scan.nextLine();
 
-            PessoaFisica pf = new PessoaFisica();
-            pf.setCpf(cpf);
-            c = pf;
-
-        } else if ("j".equals(tipoPessoa)) {
-
-            System.out.println("CNJP: ");
-            String cnpj = scan.nextLine();
-
-            PessoaJuridica pj = new PessoaJuridica();
-            pj.setCnpj(cnpj);
-            c = pj;
-
+                PessoaJuridica pj = new PessoaJuridica();
+                pj.setCnpj(cnpj);
+                c = pj;
+                break;
         }
         c.setNome(nome);
-        
-
         banco.addCliente(c);
     }
 
-    private static String inputTipoCliente() {
+    private static TipoPessoa inputTipoCliente() {
         Scanner scan = new Scanner(System.in);
         String tp = "";
-        while(tp != "j" || tp != "f") {
+        while(!tp.equals("j") && !tp.equals("f")) {
             System.out.print("Tipo do Cliente? [F/J] ");
-            String tipoPessoa = scan.nextLine().toLowerCase();
-            if(tp != "j" || tp != "f") {
+            tp = scan.nextLine().toLowerCase();
+            if(!tp.equals("j") && !tp.equals("f")) {
                 System.err.println("F: Física | J: Jurídica");
             }
         }
-        return tp;
+        return tp.equals("f") ? TipoPessoa.Fisica : TipoPessoa.Juridica;
     }
 
 }
