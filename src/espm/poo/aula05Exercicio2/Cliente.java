@@ -1,6 +1,6 @@
 package espm.poo.aula05Exercicio2;
 
-public class Cliente {
+public abstract class Cliente {
     
     private String nome;
     private Conta conta;

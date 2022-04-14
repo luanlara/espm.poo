@@ -61,17 +61,46 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Nome: ");
         String nome = scan.nextLine();
-        System.out.print("CPF: ");
-        String cpf = scan.nextLine();
 
-        Cliente c = new Cliente();
+        String tipoPessoa = inputTipoCliente();
+
+        Cliente c = null;
+        if("f".equals(tipoPessoa)) {
+
+            System.out.print("CPF: ");
+            String cpf = scan.nextLine();
+
+            PessoaFisica pf = new PessoaFisica();
+            pf.setCpf(cpf);
+            c = pf;
+
+        } else if ("j".equals(tipoPessoa)) {
+
+            System.out.println("CNJP: ");
+            String cnpj = scan.nextLine();
+
+            PessoaJuridica pj = new PessoaJuridica();
+            pj.setCnpj(cnpj);
+            c = pj;
+
+        }
         c.setNome(nome);
-        
-        PessoaFisica pf = new PessoaFisica();
-        pf.setCpf(cpf);
         
 
         banco.addCliente(c);
+    }
+
+    private static String inputTipoCliente() {
+        Scanner scan = new Scanner(System.in);
+        String tp = "";
+        while(tp != "j" || tp != "f") {
+            System.out.print("Tipo do Cliente? [F/J] ");
+            String tipoPessoa = scan.nextLine().toLowerCase();
+            if(tp != "j" || tp != "f") {
+                System.err.println("F: Física | J: Jurídica");
+            }
+        }
+        return tp;
     }
 
 }
