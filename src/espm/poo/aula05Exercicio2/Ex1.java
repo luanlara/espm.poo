@@ -17,6 +17,8 @@ public class Ex1 {
 
         Cliente Luan = pj1;
 
+        Cliente leon = new PessoaFisica();
+
         
 
     }

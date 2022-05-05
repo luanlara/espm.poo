@@ -1,4 +1,4 @@
-package espm.poo.aula05Pt2;
+package espm.poo.aula05;
 
 import espm.poo.aula05Exercicio2.Cliente;
 import espm.poo.aula05Exercicio2.PessoaFisica;

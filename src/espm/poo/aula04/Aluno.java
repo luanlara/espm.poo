@@ -1,23 +1,43 @@
 package espm.poo.aula04;
 
+import java.util.Arrays;
+
 public class Aluno {
-    
+
     Integer ra = null;
     String nome = null;
 
     public Aluno(Integer ra, String nome) {
         this.ra = ra;
-        this.nome = nome;
+        this.nome = nome;        
     }
 
-    public float media(float n1, float n2) {
-        float soma = n1 + n2;
-        return soma / 2;
+    public double media(double... notas) {
+        double soma = 0;
+        for (double n: notas) {
+            soma += n;
+        }
+        double media = soma / notas.length;
+
+        return Arrays.stream(notas).average().getAsDouble();
     }
 
     @Override
     public String toString() {
-        return "{ra: " + ra + "}" + " {nome: " + nome + "}";
+        return "{ra: " + ra +
+            ", nome: " + nome + "}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj != null
+            && obj instanceof Aluno
+            && ra.equals(((Aluno) obj).ra);
+    }
+
+    @Override
+    public int hashCode() {
+        return ra.hashCode();
     }
     
 }

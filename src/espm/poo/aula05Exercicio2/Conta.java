@@ -1,10 +1,7 @@
 package espm.poo.aula05Exercicio2;
 
-import java.util.List;
-
 public class Conta {
     
-    private int id;
     private Cliente cliente;
     private double saldo;
 
@@ -17,11 +14,15 @@ public class Conta {
     }
 
     public void sacar(double valor) {
-        this.saldo = this.saldo - valor;
+        if (this.saldo >= valor) {
+            this.saldo = this.saldo - valor;
+        }
     }
 
     public void depositar(double valor){
-        this.saldo = this.saldo + valor;
+        if (valor > 0) {
+            this.saldo = this.saldo + valor;
+        }
     }
 
     public Cliente getCliente() {

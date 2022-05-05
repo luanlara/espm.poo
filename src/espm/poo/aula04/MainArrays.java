@@ -18,7 +18,17 @@ public class MainArrays {
 
         Arrays.asList(ns).forEach(n -> System.out.println(n));
 
-        int[][] matriz = new int[3][3];
+        int[][] matriz = new int[][] {
+          {1, 2, 3},
+          {4, 5, 6},
+          {7, 8, 9}
+        };
+
+        for (int[] l: matriz) {
+          for (int c: l) {
+            System.out.println(c);
+          }
+        }
 
     }
 
